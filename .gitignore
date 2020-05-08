@@ -5,3 +5,4 @@ next.config.*
 now.json
 .env
 .vercel
+.DS_Store
