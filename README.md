@@ -12,4 +12,4 @@ Content hosting/pictures - Cloudinary https://cloudinary.com/
 
 ## Link
 
-[GopShop](https://gopshop.com)
+[GopShop](https://gopshop.herokuapp.com/)
