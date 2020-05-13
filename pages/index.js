@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import ProductSearch from "../components/Index/ProductSearch"
+import ProductSearch from "../components/Index/ProductSearch";
 import ProductList from "../components/Index/ProductList";
 import ProductPagination from "../components/Index/ProductPagination";
 import baseUrl from "../utils/baseUrl";
@@ -22,6 +22,7 @@ Home.getInitialProps = async ctx => {
   const payload = { params: { page, size } };
   // fetch data on server
   const response = await axios.get(url, payload);
+  /* console.log(response); */
   // return response data as an object
   return response.data;
   // note: this object will be merged with existing props

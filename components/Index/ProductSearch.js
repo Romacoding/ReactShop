@@ -1,4 +1,6 @@
+import React from 'react';
 import { Input, Container } from "semantic-ui-react";
+
 
 function ProductSearch({ products }) {
     const [searchTerm, setTerm] = React.useState({ searchTerm: '' });
