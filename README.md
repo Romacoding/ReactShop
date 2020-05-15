@@ -1,4 +1,4 @@
-# ReactShop
+# GopShop
 
 E-commerce web application build with JavaScript.
 
