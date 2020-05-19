@@ -8,7 +8,6 @@ import baseUrl from "../utils/baseUrl";
 function Home({ products, totalPages }) {
   return (
     <>
-      {/* <ProductSearch products={products} /> */}
       <ProductList products={products} />
       <ProductPagination totalPages={totalPages} />
     </>
@@ -17,7 +16,7 @@ function Home({ products, totalPages }) {
 
 Home.getInitialProps = async ctx => {
   const page = ctx.query.page ? ctx.query.page : "1";
-  const size = 18;
+  const size = 20;
   const url = `${baseUrl}/api/products`;
   const payload = { params: { page, size } };
   // fetch data on server

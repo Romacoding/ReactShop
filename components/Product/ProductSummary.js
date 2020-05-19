@@ -5,7 +5,7 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user }) {
   return (
     <Item.Group>
       <Item>
-        <Item.Image size="medium" src={mediaUrl} />
+        <Item.Image size="medium" src={mediaUrl?mediaUrl:'https://res.cloudinary.com/reactshop/image/upload/v1589849381/no-image_h7eino.png'} />
         <Item.Content>
           <Item.Header>{name}</Item.Header>
           <Item.Description>

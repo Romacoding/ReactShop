@@ -9,7 +9,7 @@ function ProductList({ products }) {
   function mapProductsToItems(products) {
     return products.map(product => ({
       header: product.name,
-      image: showPics?product.mediaUrl:"",
+      image: showPics?(product.mediaUrl?product.mediaUrl:'https://res.cloudinary.com/reactshop/image/upload/v1589849381/no-image_h7eino.png'):"",
       meta: `${product.price} Грн.`,
       color: "teal",
       fluid: true,
@@ -31,7 +31,7 @@ function ProductList({ products }) {
     </Container>
     <Card.Group
       stackable
-      itemsPerRow="3"
+      itemsPerRow="4"
       centered
       items={mapProductsToItems(products)}
     />
