@@ -24,7 +24,6 @@ function ProductSearch({ products, user }) {
         )
     }
     const result = filteredProducts();
-    console.log(user,"user");
 
     /*     function mapProductsToItems(products) {
             return products.map(product => ({

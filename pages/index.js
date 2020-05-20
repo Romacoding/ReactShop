@@ -21,7 +21,6 @@ Home.getInitialProps = async ctx => {
   const payload = { params: { page, size } };
   // fetch data on server
   const response = await axios.get(url, payload);
-  /* console.log(response); */
   // return response data as an object
   return response.data;
   // note: this object will be merged with existing props

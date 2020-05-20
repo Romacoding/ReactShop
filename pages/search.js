@@ -13,7 +13,6 @@ Search.getInitialProps = async () => {
   const url = `${baseUrl}/api/search`;
   // fetch data on server
   const response = await axios.get(url);
-  /* console.log(response); */
   // return response data as an object
   return response.data;
   // note: this object will be merged with existing props
