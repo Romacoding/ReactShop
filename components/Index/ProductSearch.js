@@ -1,8 +1,9 @@
 import React from 'react';
 import { Input, Card, Icon, Table, Button, Container } from "semantic-ui-react";
+import AddProductToCart from "../Product/AddProductToCart";
 
 
-function ProductSearch({ products }) {
+function ProductSearch({ products, user }) {
     const [searchTerm, setTerm] = React.useState({ searchTerm: "...." });
     /* const [searchProducts, setProds] = React.useState(products); */
     const [searchLoading, setLoading] = React.useState({ searchLoading: false });
@@ -23,7 +24,7 @@ function ProductSearch({ products }) {
         )
     }
     const result = filteredProducts();
-    /* console.log(result); */
+    console.log(user,"user");
 
     /*     function mapProductsToItems(products) {
             return products.map(product => ({
@@ -85,7 +86,8 @@ function ProductSearch({ products }) {
                                 <Table.Cell>{product.sku}</Table.Cell>
                                 <Table.Cell>{product.name}</Table.Cell>
                                 <Table.Cell>{product.price}</Table.Cell>
-                                <Table.Cell><Button color='blue' size='medium'>Додати в кошик</Button></Table.Cell>
+                                {/* <Table.Cell><Button color='blue' size='medium'>Додати в кошик</Button></Table.Cell> */}
+                                <Table.Cell><AddProductToCart user={user} productId={product._id} /></Table.Cell>
                             </Table.Row>
                         );
                     })}
@@ -95,4 +97,5 @@ function ProductSearch({ products }) {
 
     );
 }
+
 export default ProductSearch;

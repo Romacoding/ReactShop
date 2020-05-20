@@ -40,6 +40,7 @@ function AddProductToCart({ user, productId }) {
 
   return (
     <Input
+      size="mini"
       type="number"
       min="1"
       placeholder="Quantity"
@@ -49,14 +50,14 @@ function AddProductToCart({ user, productId }) {
         user && success
           ? {
               color: "blue",
-              content: "Товар додано!",
+              content: "Додано!",
               icon: "plus cart",
               disabled: true
             }
           : user
           ? {
               color: "orange",
-              content: "Додати в кошик",
+              content: "Додати",
               icon: "plus cart",
               loading,
               disabled: loading,
@@ -64,7 +65,7 @@ function AddProductToCart({ user, productId }) {
             }
           : {
               color: "blue",
-              content: "Зареєсруйтесь щоб купити товар",
+              content: "Зареєструватись",
               icon: "signup",
               onClick: () => router.push("/signup")
             }

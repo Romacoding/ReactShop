@@ -3,9 +3,9 @@ import axios from "axios";
 import ProductSearch from "../components/Index/ProductSearch";
 import baseUrl from "../utils/baseUrl";
 
-function Search({ products }) {
+function Search({ products, user }) {
   return (
-      <ProductSearch products={products} />
+      <ProductSearch user={user} products={products} />
   );
 }
 
