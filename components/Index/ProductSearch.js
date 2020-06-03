@@ -69,20 +69,20 @@ function ProductSearch({ products, user }) {
                 />
             </Container> */}
             <Table stackable columns={3} color={"blue"}>
-                <Table.Header>
+{/*                 <Table.Header>
                     <Table.Row>
                         <Table.HeaderCell>Код товару</Table.HeaderCell>
                         <Table.HeaderCell>Назва товару</Table.HeaderCell>
                         <Table.HeaderCell>Ціна товару</Table.HeaderCell>
                         <Table.HeaderCell>Замовити</Table.HeaderCell>
                     </Table.Row>
-                </Table.Header>
+                </Table.Header> */}
 
                 <Table.Body>
                     {cellArray.map(product => {
                         return (
                             <Table.Row key={product._id}>
-                                <Table.Cell>{product.sku}</Table.Cell>
+                                {/* <Table.Cell>{product.sku}</Table.Cell> */}
                                 <Table.Cell>{product.name}</Table.Cell>
                                 <Table.Cell>{product.price}</Table.Cell>
                                 {/* <Table.Cell><Button color='blue' size='medium'>Додати в кошик</Button></Table.Cell> */}
