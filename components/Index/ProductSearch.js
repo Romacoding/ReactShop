@@ -42,7 +42,7 @@ function ProductSearch({ products, user }) {
         return products.map(product => ({
             name: product.name,
             _id: product._id,
-            price: `${product.price} Грн.`,
+            price: product.price,
             sku: product.sku
         }));
     }
@@ -66,9 +66,9 @@ function ProductSearch({ products, user }) {
                             <Table.Row key={product._id}>
                                 {/* <Table.Cell>{product.sku}</Table.Cell> */}
                                 <Table.Cell>{product.name}</Table.Cell>
-                                <Table.Cell>{product.price}</Table.Cell>
+                                <Table.Cell>{`${product.price} Грн.`}</Table.Cell>
                                 {/* <Table.Cell><Button color='blue' size='medium'>Додати в кошик</Button></Table.Cell> */}
-                                <Table.Cell><AddProductToCart user={user} productId={product._id} /></Table.Cell>
+                                <Table.Cell><AddProductToCart user={user} productId={product._id} price={product.price}/></Table.Cell>
                             </Table.Row>
                         );
                     })}
