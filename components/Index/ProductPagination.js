@@ -8,6 +8,10 @@ function ProductPagination({ totalPages }) {
     <Container textAlign="center" style={{ margin: "2em" }}>
       <Pagination
         defaultActivePage={1}
+        ellipsisItem={null}
+        siblingRange={0}
+        firstItem={null}
+        lastItem={null}
         totalPages={totalPages}
         onPageChange={(event, data) => {
           data.activePage === 1

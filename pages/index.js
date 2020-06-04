@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import ProductSearch from "../components/Index/ProductSearch";
 import ProductList from "../components/Index/ProductList";
 import ProductPagination from "../components/Index/ProductPagination";
 import baseUrl from "../utils/baseUrl";

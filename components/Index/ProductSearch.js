@@ -49,8 +49,8 @@ function ProductSearch({ products, user }) {
     const cellArray = mapProductsToCells(result);
     return (
         <>
-            <Container textAlign="center" style={{ margin: "2em" }}>
                 <Input
+                    fluid
                     label='Пошук'
                     icon='search'
                     name='searchTerm'
@@ -59,25 +59,7 @@ function ProductSearch({ products, user }) {
                     onChange={handleSearchChange}
                     loading={searchLoading.searchLoading}
                 />
-            </Container>
-            {/*  <Container>
-                <Card.Group
-                    stackable
-                    itemsPerRow="3"
-                    centered
-                    items={mapProductsToItems(result)}
-                />
-            </Container> */}
             <Table stackable columns={3} color={"blue"}>
-{/*                 <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell>Код товару</Table.HeaderCell>
-                        <Table.HeaderCell>Назва товару</Table.HeaderCell>
-                        <Table.HeaderCell>Ціна товару</Table.HeaderCell>
-                        <Table.HeaderCell>Замовити</Table.HeaderCell>
-                    </Table.Row>
-                </Table.Header> */}
-
                 <Table.Body>
                     {cellArray.map(product => {
                         return (

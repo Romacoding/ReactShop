@@ -19,7 +19,7 @@ function Header({ user }) {
   }
 
   return (
-    <Menu stackable fluid id="menu" inverted>
+    <Menu fluid id="menu" inverted style={{ marginBottom: "0em" }}>
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive("/")}>
@@ -28,7 +28,7 @@ function Header({ user }) {
               src="/static/logo.svg"
               style={{ marginRight: "1em" }}
             />
-            ГопШоп!
+            <div className="main-title">ГопШоп!</div>
           </Menu.Item>
         </Link>
 
@@ -38,14 +38,14 @@ function Header({ user }) {
               name="search"
               size="large"
             />
-            Пошук
+            <div className="main-title">Пошук</div>
           </Menu.Item>
         </Link>
 
         <Link href="/cart">
           <Menu.Item header active={isActive("/cart")}>
             <Icon name="cart" size="large" />
-            Кошик
+            <div className="main-title">Кошик</div>
           </Menu.Item>
         </Link>
 
@@ -53,7 +53,7 @@ function Header({ user }) {
           <Link href="/create">
             <Menu.Item header active={isActive("/create")}>
               <Icon name="add square" size="large" />
-              Створити
+              <div className="main-title">Створити</div>
             </Menu.Item>
           </Link>
         )}
@@ -63,13 +63,13 @@ function Header({ user }) {
             <Link href="/account">
               <Menu.Item header active={isActive("/account")}>
                 <Icon name="user" size="large" />
-                Ваш кабінет
+                <div className="main-title">Ваш кабінет</div>
               </Menu.Item>
             </Link>
 
             <Menu.Item onClick={handleLogout} header>
               <Icon name="sign out" size="large" />
-              Вийти
+              <div className="main-title">Вийти</div>
             </Menu.Item>
           </>
         ) : (
@@ -77,14 +77,14 @@ function Header({ user }) {
             <Link href="/login">
               <Menu.Item header active={isActive("/login")}>
                 <Icon name="sign in" size="large" />
-                Увійти
+                <div className="main-title">Увійти</div>
               </Menu.Item>
             </Link>
 
             <Link href="/signup">
               <Menu.Item header active={isActive("/signup")}>
                 <Icon name="signup" size="large" />
-                Зареєструватись
+                <div className="main-title">Зареєструватись</div>
               </Menu.Item>
             </Link>
           </>

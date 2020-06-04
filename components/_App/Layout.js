@@ -19,7 +19,7 @@ function Layout({ children, user }) {
         <title>GopShop</title>
       </Head>
       <Header user={user} />
-      <Container text style={{ paddingTop: "1em" }}>
+      <Container text style={{ paddingTop: "0.5em" }}>
         {children}
       </Container>
     </>

@@ -5,11 +5,11 @@ function ProductList({ products }) {
   const [showPics, setShowPics] = React.useState(true);
   function handleToggleChange() {
     setShowPics(!showPics);
-}
+  }
   function mapProductsToItems(products) {
     return products.map(product => ({
       header: product.name,
-      image: showPics?(product.mediaUrl?product.mediaUrl:'https://res.cloudinary.com/reactshop/image/upload/v1589849381/no-image_h7eino.png'):"",
+      image: showPics ? (product.mediaUrl ? product.mediaUrl : 'https://res.cloudinary.com/reactshop/image/upload/v1589849381/no-image_h7eino.png') : "",
       meta: `${product.price} Грн.`,
       color: "teal",
       fluid: true,
@@ -21,20 +21,22 @@ function ProductList({ products }) {
 
   return (
     <>
-    <Container textAlign="center" style={{ margin: "2em" }}>
-    <Checkbox
-        toggle
-        label="Показувати фото товарів"
-        checked={showPics}
-        onClick={handleToggleChange}
-    />
-    </Container>
-    <Card.Group
-      stackable
-      itemsPerRow="4"
-      centered
-      items={mapProductsToItems(products)}
-    />
+      <Container style={{ marginBottom: "1em" }}>
+        <Checkbox
+          label="Показувати фото товарів"
+          toggle
+          checked={showPics}
+          onClick={handleToggleChange}
+        />
+      </Container>
+      <Container style={{ marginBottom: "0em" }}>
+      <Card.Group
+        stackable
+        itemsPerRow="4"
+        centered
+        items={mapProductsToItems(products)}
+      />
+      </Container>
     </>
   );
 }
