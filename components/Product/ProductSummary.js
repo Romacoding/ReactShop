@@ -13,7 +13,7 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user }) {
             <Label>SKU: {sku}</Label>
           </Item.Description>
           <Item.Extra>
-            <AddProductToCart user={user} productId={_id} />
+            <AddProductToCart user={user} productId={_id} price={price} />
           </Item.Extra>
         </Item.Content>
       </Item>

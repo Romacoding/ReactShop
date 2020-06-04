@@ -40,7 +40,7 @@ function AddProductToCart({ user, productId, price }) {
 
   return (
     <>
-      <Label basic >{price * quantity}</Label>
+      <Label basic >{Number(price) * quantity}</Label>
       <Button.Group size='small'>
         <Button color='green' icon='plus' onClick={() => setQuantity(quantity + 1)}/>
         <Button color='red' icon='minus' onClick={() => {quantity==1 ? setQuantity(1):setQuantity(quantity - 1)}}/>
