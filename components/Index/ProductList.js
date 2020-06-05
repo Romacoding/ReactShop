@@ -31,6 +31,7 @@ function ProductList({ products }) {
       </Container>
       <Container style={{ marginBottom: "0em" }}>
       <Card.Group
+        doubling
         stackable
         itemsPerRow="4"
         centered

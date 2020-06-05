@@ -8,6 +8,8 @@ function CartSummary({ products, handleCheckout, success }) {
   const [stripeAmount, setStripeAmount] = React.useState(0);
   const [isCartEmpty, setCartEmpty] = React.useState(false);
 
+  console.log(cartAmount);
+
   React.useEffect(() => {
     const { cartTotal, stripeTotal } = calculateCartTotal(products);
     setCartAmount(cartTotal);
@@ -19,7 +21,7 @@ function CartSummary({ products, handleCheckout, success }) {
     <>
       <Divider />
       <Segment clearing size="large">
-        <strong>Всьго товарів на суму:</strong> ${cartAmount}
+        <strong>Всьго товарів на суму:</strong> {cartAmount} Грн.
         <StripeCheckout
           name="ГопШоп!"
           amount={stripeAmount}

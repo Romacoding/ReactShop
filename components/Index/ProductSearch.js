@@ -59,21 +59,23 @@ function ProductSearch({ products, user }) {
                     onChange={handleSearchChange}
                     loading={searchLoading.searchLoading}
                 />
-            <Table stackable columns={3} color={"blue"}>
+                <Container>
+            <Table  size={'small'} fixed columns={3} color={"blue"}>
                 <Table.Body>
                     {cellArray.map(product => {
                         return (
                             <Table.Row key={product._id}>
                                 {/* <Table.Cell>{product.sku}</Table.Cell> */}
-                                <Table.Cell>{product.name}</Table.Cell>
-                                <Table.Cell>{`${product.price} Грн.`}</Table.Cell>
+                                <Table.Cell width='2'>{product.name}</Table.Cell>
+                                <Table.Cell width='2'>{`Ціна ${product.price} Грн.`}</Table.Cell>
                                 {/* <Table.Cell><Button color='blue' size='medium'>Додати в кошик</Button></Table.Cell> */}
-                                <Table.Cell><AddProductToCart user={user} productId={product._id} price={product.price}/></Table.Cell>
+                                <Table.Cell width='5'><AddProductToCart user={user} productId={product._id} price={product.price}/></Table.Cell>
                             </Table.Row>
                         );
                     })}
                 </Table.Body>
             </Table>
+            </Container>
         </>
 
     );

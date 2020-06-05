@@ -21,7 +21,7 @@ function ProductAttributes({ description, _id, user }) {
   return (
     <>
       <Header as="h3">Опис товару</Header>
-      <p>{description}</p>
+      <p style={{ textAlign: "justify" }}>{description}</p>
       {isRootOrAdmin && (
         <>
           <Button

@@ -9,8 +9,8 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user }) {
         <Item.Content>
           <Item.Header>{name}</Item.Header>
           <Item.Description>
-            <p>{price} Грн.</p>
-            <Label>SKU: {sku}</Label>
+            <p>Ціна {price} Грн.</p>
+            {/* <Label>Код: {sku}</Label> */}
           </Item.Description>
           <Item.Extra>
             <AddProductToCart user={user} productId={_id} price={price} />

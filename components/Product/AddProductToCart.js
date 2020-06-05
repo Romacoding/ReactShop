@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Button, Label } from "semantic-ui-react";
+import { Input, Button, Label, Container } from "semantic-ui-react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import baseUrl from "../../utils/baseUrl";
@@ -40,12 +40,8 @@ function AddProductToCart({ user, productId, price }) {
 
   return (
     <>
-      <Label basic >{(Number(price) * quantity).toFixed(2)}</Label>
-      <Button.Group size='small'>
-        <Button color='green' icon='plus' onClick={() => setQuantity(quantity + 1)}/>
-        <Button color='red' icon='minus' onClick={() => {quantity==1 ? setQuantity(1):setQuantity(quantity - 1)}}/>
-      </Button.Group>
       <Input
+        fluid
         size="mini"
         type="number"
         min="1"
@@ -76,7 +72,15 @@ function AddProductToCart({ user, productId, price }) {
                 onClick: () => router.push("/signup")
               }
         }
-      />
+        >
+      </Input>
+      <Container>
+      <Button.Group style={{ marginTop: "0.5em" }} size='mini'>
+      <Button circular color='blue' icon='plus' onClick={() => setQuantity(quantity + 1)}/>
+      <Button circular color='blue' icon='minus' onClick={() => {quantity==1 ? setQuantity(1):setQuantity(quantity - 1)}}/>
+      </Button.Group>
+      <Label basic color='blue' style={{ marginLeft: "1em", marginTop: "0.5em" }}>{`Всього ${(Number(price) * quantity).toFixed(2)} Грн.`}</Label>
+      </Container>
     </>
   );
 }
