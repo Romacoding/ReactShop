@@ -8,7 +8,7 @@ function CartSummary({ products, handleCheckout, success }) {
   const [stripeAmount, setStripeAmount] = React.useState(0);
   const [isCartEmpty, setCartEmpty] = React.useState(false);
 
-  console.log(cartAmount);
+  /* console.log(cartAmount); */
 
   React.useEffect(() => {
     const { cartTotal, stripeTotal } = calculateCartTotal(products);

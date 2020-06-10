@@ -62,9 +62,9 @@ export default async (req, res) => {
     // 8) Clear products in cart
     await Cart.findOneAndUpdate({ _id: cart._id }, { $set: { products: [] } });
     // 9) Send back success (200) response
-    res.status(200).send("Checkout successful");
+    res.status(200).send("Оплату проведено");
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error processing charge");
+    res.status(500).send("Помилка при проведенні оплати");
   }
 };
