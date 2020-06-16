@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Card, Icon, Table, Button, Container } from "semantic-ui-react";
 import AddProductToCart from "../Product/AddProductToCart";
-
+import baseUrl from "../../utils/baseUrl";
 
 function ProductSearch({ products, user }) {
     const [searchTerm, setTerm] = React.useState({ searchTerm: "...." });
@@ -60,16 +60,16 @@ function ProductSearch({ products, user }) {
                     loading={searchLoading.searchLoading}
                 />
                 <Container>
-            <Table  size={'small'} fixed columns={3} color={"blue"}>
+            <Table fixed size={'small'} columns={3} color={"blue"}>
                 <Table.Body>
                     {cellArray.map(product => {
                         return (
                             <Table.Row key={product._id}>
                                 {/* <Table.Cell>{product.sku}</Table.Cell> */}
-                                <Table.Cell width='2'>{product.name}</Table.Cell>
+                                <Table.Cell width='5'> <Container href={`${baseUrl}/product?_id=${product._id}`} style={{textDecoration: "none", color: "#000000"}} >{product.name}</Container></Table.Cell>
                                 <Table.Cell width='2'>{`Ціна ${product.price} Грн.`}</Table.Cell>
                                 {/* <Table.Cell><Button color='blue' size='medium'>Додати в кошик</Button></Table.Cell> */}
-                                <Table.Cell width='5'><AddProductToCart user={user} productId={product._id} price={product.price}/></Table.Cell>
+                                <Table.Cell width='4'><AddProductToCart user={user} productId={product._id} price={product.price}/></Table.Cell>
                             </Table.Row>
                         );
                     })}
