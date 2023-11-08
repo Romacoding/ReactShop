@@ -1,6 +1,6 @@
 # GopShop
 
-E-commerce web application build with JavaScript.
+E-commerce web application build with JavaScript
 
 ## Technology used:
 
